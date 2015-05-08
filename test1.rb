@@ -22,6 +22,16 @@ module Test1
 
 #       для самого худшего случая не более чем O(N);
 
+# test:
+# irb
+# 2.1.1 :001 > require './test1'
+# => true 
+# 2.1.1 :002 > Test1.solution("(()(())())")
+# => 1 
+# 2.1.1 :003 > Test1.solution("())")
+# => 0 
+# 2.1.1 :004 >
+
   def solution(s)
     ptr = 0
     cnter = 0

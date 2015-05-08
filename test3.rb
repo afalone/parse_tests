@@ -35,6 +35,18 @@ module Test3
 #             в худшем случае время выполнения должно быть O(N*log(N));
 #           в худшем случае памяти должно использоваться O(N) .
 #             Элементы массива можно модифицировать.
+
+# test:
+  #
+  # irb
+  # 2.1.1 :001 > require './test3'
+  # => true 
+  # 2.1.1 :002 > Test3.solution([10,2,5,1,8,20])
+  # => 1 
+  # 2.1.1 :003 > Test3.solution([10,50,5,1])
+  # => 0 
+  # 2.1.1 :004 >
+
   def test1(c, p, q, r)
     c[p].first + c[q].first > c[r].first && c[p].first < c[q].first + c[r].first && c[p].first + c[r].first > c[q].first
   end

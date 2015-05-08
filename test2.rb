@@ -24,6 +24,16 @@ module Test2
 
 #     для самого худшего случая не более чем O(N);
 
+# test:
+  #
+  # irb
+  # 2.1.1 :001 > require './test2'
+  # => true 
+  # 2.1.1 :002 > Test2.solution("dooernedrn")
+  # => 1 
+  # 2.1.1 :003 > Test2.solution("aabcba")
+  # => 0 
+  # 2.1.1 :004 >
   def solution(s)
     counts = {}
     s.split('').each do |c|

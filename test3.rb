@@ -54,27 +54,20 @@ module Test3
   def solution(a)
     a.each_with_index{|i, idx| a[idx] = [i, idx] }
     a.sort!{|a, b| a.first <=> b.first }
-    # a.uniq!{|i| i.first }
     p = 0
     q = 1
     r = 2
     while r < a.size && q < r && p < q
-      if test1(a, p, q, r)
-        [a[p].last, a[q].last, a[r].last].sort
-        return 1
-      else
-        if q + 1 >= r
-          r += 1
-          q = p + 1
-          next
-        end
-        if a[p].first + a[r - 1].first <= a[r].first
-          p += 1
-          q = p + 1
-          next
-        end
-        q += 1
+      return 1 if test1(a, p, q, r)
+      while p < (r - 2) && (a[p].first + a[r - 1].first) <= a[r].first
+        p += 1
+        q = p
       end
+      if q + 1 >= r
+        r += 1
+        q = p
+      end
+      q += 1
     end
     0
   end
